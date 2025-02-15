@@ -1,4 +1,4 @@
-package p04_BubbleSortTest;
+package BubbleSortTest;
 
 public class Bubble {
 
