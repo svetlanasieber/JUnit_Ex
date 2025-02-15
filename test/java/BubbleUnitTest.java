@@ -12,7 +12,7 @@ public class BubbleUnitTest {
 
         Bubble.sort(array);
 
-        // Какво очаквам да се е случило с моят масив след сортировката?
+
         int[] orderedArray = {1, 2, 3, 4, 5, 6, 7, 8, 9};
 
         Assertions.assertArrayEquals(array, orderedArray);
