@@ -1,4 +1,4 @@
-package p02_ExtendedDatabase;
+package ExtendedDatabase;
 
 import javax.naming.OperationNotSupportedException;
 import java.util.ArrayList;
@@ -17,9 +17,7 @@ public class Database {
         this.index = elementsCount - 1;
     }
 
-    // Ще тествам:
-    // 1. Ако подам елемент, който е null -> грешка
-    // 2. Ако подам човек, който НЕ Е null -> човека ще бъде последен в моят масив с хора, както и броят ще се увеличи с 1
+
     public void add(Person person) throws OperationNotSupportedException {
         if (person == null) {
             throw new OperationNotSupportedException();
@@ -29,9 +27,7 @@ public class Database {
         this.elementsCount++;
     }
 
-    // Ще тествам:
-    // 1. Ако премахвам от празна база -> грешка
-    // 2. Ако премахвам от пълна база -> броят на елементите намаля с 1
+
     public void remove() throws OperationNotSupportedException {
         try {
 			this.elements[index--] = null;
@@ -41,8 +37,7 @@ public class Database {
 		}
     }
 
-    // Ще тествам:
-    // 1. Ако извъкам метода на база с X хора –> връща масив с точно тези хора
+
     public Person[] getElements() {
         Person[] buffer = new Person[elementsCount];
         int bufferIndex = 0;
@@ -56,10 +51,6 @@ public class Database {
         return buffer;
     }
 
-    // Ще тествам:
-    // 1. Ако подам username със стойност null -> грешка
-    // 2. Ако в базата от данни нямам такъв човек с такова име -> грешка
-    // 3. Ако в базата от данни имам такъв човек с такова име –> получавам този човек
     public Person findByUsername(String username) throws OperationNotSupportedException {
         List<Person> people = new ArrayList<>();
 
@@ -85,9 +76,7 @@ public class Database {
         return people.get(0);
     }
 
-    // Ще тествам:
-    // 1. Ако в базата от данни нямам такъв човек с такова ID -> грешка
-    // 2. Ако в базата от данни имам такъв човек с такова ID –> получавам този човек
+
     public Person findById(long id) throws OperationNotSupportedException {
         List<Person> people = new ArrayList<>();
 
