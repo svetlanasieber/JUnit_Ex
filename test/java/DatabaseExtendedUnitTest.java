@@ -7,8 +7,6 @@ import javax.naming.OperationNotSupportedException;
 
 public class DatabaseExtendedUnitTest {
 
-    // Ще тествам: add(Person person)
-    // 1. Ако подам елемент, който е null -> грешка
     @Test
     public void whenTryToAddNullValue_thenExceptionIsThrown() throws OperationNotSupportedException {
 
@@ -23,7 +21,7 @@ public class DatabaseExtendedUnitTest {
         });
     }
 
-    // 2. Ако подам човек, който НЕ Е null -> човека ще бъде последен в моят масив с хора, както и броят ще се увеличи с 1
+ 
     @Test
     public void whenAddNonNullPerson_thenPersonIsAddedAtTheLastIndexAndCountIsIncrementedByOne() throws OperationNotSupportedException {
 
@@ -40,14 +38,11 @@ public class DatabaseExtendedUnitTest {
         int newPeopleCount = database.getElements().length;
         Person lastPerson = database.getElements()[newPeopleCount - 1];
 
-        // 1. Петър е последният човек в масива с хора
         Assertions.assertEquals(lastPerson, peter);
-        // 2. Броят на хората се е увеличил с 1
         Assertions.assertEquals(newPeopleCount, initialPeopleCount + 1);
     }
 
-    // Ще тествам:
-    // 1. Ако премахвам от празна база -> грешка
+
     @Test
     public void whenTryToRemoveFromEmptyDatabase_thenExceptionIsThrown() throws OperationNotSupportedException {
 
@@ -65,7 +60,7 @@ public class DatabaseExtendedUnitTest {
         });
     }
 
-    // 2. Ако премахвам от пълна база -> броят на елементите намаля с 1
+
     @Test
     public void whenTryToRemoveFromNonEmptyDataBase_thenPeopleCountDecrementByOne() throws OperationNotSupportedException {
 
