@@ -1,4 +1,4 @@
-package p06_TirePressureMonitoringSystem;
+package TirePressureMonitoringSystem;
 
 public class Alarm {
     private static final double LOW_PRESSURE_THRESHOLD = 17;
@@ -13,7 +13,7 @@ public class Alarm {
     }
 
     public void check() {
-        // Алармата пита сензора какво е налягането на гумата в момента
+  
         double psiPressureValue = sensor.popNextPressurePsiValue();
 
         if (psiPressureValue < LOW_PRESSURE_THRESHOLD || HIGH_PRESSURE_THRESHOLD < psiPressureValue) {
