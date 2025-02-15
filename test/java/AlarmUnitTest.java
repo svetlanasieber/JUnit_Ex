@@ -9,10 +9,7 @@ public class AlarmUnitTest {
     @Test
     public void whenSensorReturnsLowerValueThanTheAllowedThreshold_thenAlarmIsOn() {
 
-        // Не искам да имам реален сензор!!!
-        // Искам да имам обект, на който аз да му казвбам как да се държи.
-        //Sensor sensor = Mockito.mock();
-        //Alarm alarm = new Alarm(sensor);
+
 
     }
 }
