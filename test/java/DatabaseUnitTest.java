@@ -11,9 +11,6 @@ public class DatabaseUnitTest {
 
         Integer[] elements = new Integer[0];
 
-        // assertThrows = очаквам даден код да хвърли някакъв exception
-        // 1-во = класът на грешката, която очаквам да хвърли
-        // 2-ро = () -> {кода, който хвърля тази грешка}
         Assertions.assertThrows(OperationNotSupportedException.class, () -> {
             Database database = new Database(elements);
         });
@@ -22,10 +19,9 @@ public class DatabaseUnitTest {
     @Test
     public void whenCreatDatabaseWithMoreThanSixteenElements_thenExceptionIsThrown() {
 
-        // Масив с повече от 16 елемента
+
         Integer[] elements = new Integer[17];
 
-        // Очаквам, че няма да мога да създам база от данни с повече от 16 елемента
         Assertions.assertThrows(OperationNotSupportedException.class, () -> {
             Database database = new Database(elements);
         });
@@ -67,12 +63,10 @@ public class DatabaseUnitTest {
 
         database.add(5);
 
-        // След добавяне, очаквам:
-        // 1. Последният елемент да бъде числото, което аз съм добавил
         Integer lastElement = database.getElements()[database.getElements().length - 1];
         Assertions.assertEquals(number, lastElement);
 
-        // 2. Броят на елементите да са се увеличили с 1
+
         int newElementsCount = database.getElements().length;
         Assertions.assertEquals(newElementsCount, oldElementsCount + 1);
     }
