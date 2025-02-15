@@ -1,4 +1,4 @@
-package p02_ExtendedDatabase;
+package ExtendedDatabase;
 
 public class Person {
 
