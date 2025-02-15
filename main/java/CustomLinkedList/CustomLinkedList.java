@@ -1,4 +1,4 @@
-package p05_CustomLinkedList;
+package CustomLinkedList;
 
 /**
  * Dynamic (linked) list class definition
